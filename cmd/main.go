@@ -1,8 +1,13 @@
 package main
 
-import schedule "github.com/helvellyn-io/chaos/src/scheduler"
+import (
+	"github.com/helvellyn-io/chaos/src/client"
+	schedule "github.com/helvellyn-io/chaos/src/scheduler"
+)
 
 func main() {
 
 	schedule.Scheduler()
+	client.GetPods()
+
 }

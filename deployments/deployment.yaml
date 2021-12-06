@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: chaos
+spec:
+  template:
+    spec:
+      containers:
+      - name: chaos
+        image: tcxcontainers.azurecr.io/tcxcontainers/chaos_app_v1:v1.0.0
+      restartPolicy: Never
+  backoffLimit: 4
