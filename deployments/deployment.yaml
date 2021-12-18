@@ -7,6 +7,6 @@ spec:
     spec:
       containers:
       - name: chaos
-        image: tcxcontainers.azurecr.io/tcxcontainers/chaos_app_v1:v1.0.0
+        image: tcxcontainers.azurecr.io/tcxcontainers/chaos_app_v1:v1.0.1
       restartPolicy: Never
   backoffLimit: 4

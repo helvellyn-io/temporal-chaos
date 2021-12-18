@@ -2,7 +2,6 @@ package schedule
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"os"
 )
@@ -13,7 +12,7 @@ type ChaosSpec struct {
 	RunIn      string `json:"runin"`
 }
 
-func Scheduler() {
+func Scheduler() interface{} {
 
 	f, _ := ioutil.ReadFile("/Users/dylanjohnson/go/src/github.com/helvellyn-io/chaos/config/configuration.json")
 
@@ -23,6 +22,8 @@ func Scheduler() {
 		os.Exit(1)
 	}
 
-	fmt.Println(js.TargetType)
+	//fmt.Println(js.TargetType)
+
+	return js.TargetType
 
 }
