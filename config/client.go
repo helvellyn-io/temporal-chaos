@@ -31,5 +31,5 @@ func K8Client() kubernetes.Clientset {
 		panic(err.Error())
 
 	}
-	return *clientset
+	return *clientset //need to return error here for test.
 }
