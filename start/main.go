@@ -2,29 +2,34 @@ package main
 
 import (
 	"context"
-	"fmt"
 	"log"
 
+	"github.com/helvellyn-io/chaos"
+	"github.com/pborman/uuid"
 	"go.temporal.io/sdk/client"
-
-	app "github.com/helvellyn-io/chaos"
 )
 
 func main() {
-	// Client object just once per process
-	c, err := client.NewClient(client.Options{})
+	// The client is a heavyweight object that should be created once per process.
+	c, err := client.NewClient(client.Options{
+		HostPort: client.DefaultHostPort,
+	})
 	if err != nil {
-		log.Fatalln("unable to create Temporal client", err)
+		log.Fatalln("Unable to create client", err)
 	}
 	defer c.Close()
-	options := client.StartWorkflowOptions{
-		ID:        "chaos-pod-workflow",
-		TaskQueue: app.ChaosMonkey,
+
+	// This workflow ID can be user business logic identifier as well.
+	workflowID := "cron_" + uuid.New()
+	workflowOptions := client.StartWorkflowOptions{
+		ID:           workflowID,
+		TaskQueue:    "cron",
+		CronSchedule: "* * * * *",
 	}
 
-	we, err := c.ExecuteWorkflow(context.Background(), options, app.DeletePodWorkflow)
+	we, err := c.ExecuteWorkflow(context.Background(), workflowOptions, chaos.DelPodWorkflow)
 	if err != nil {
-		log.Fatalln("unable to complete Workflow", err)
+		log.Fatalln("Unable to execute workflow", err)
 	}
-	fmt.Println(we)
+	log.Println("Started workflow", "WorkflowID", we.GetID(), "RunID", we.GetRunID())
 }
