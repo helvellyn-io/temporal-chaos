@@ -1,19 +1,13 @@
 # chaos
-Random Chaos Stuff 
+Temporal Chaos Experiments 
 
 
 Define and schedule chaos experients. 
 
 
-Spec: 
+INFO: 
 
-```func GetSvcPods() {
-
-	svc, _ := clientset.CoreV1().Services("dev").List(context.Background(),
-		v1.ListOptions{LabelSelector: "app=tcx-accountservice"})
-
-	for _, v := range svc.Items {
-		fmt.Println(v.Name)
-	}
-
-}```
+```
+This repositry contains K8s Chaos code which randomly deletes pods of a specified deployment.
+It uses the Temporal framework to mange the schedule and execution of many Chaos experiments.
+```

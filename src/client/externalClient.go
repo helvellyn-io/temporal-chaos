@@ -20,7 +20,6 @@ limitations under the License.
 
 import (
 	"context"
-	"fmt"
 	"log"
 
 	"github.com/helvellyn-io/chaos/config"
@@ -51,11 +50,12 @@ func GetPods() string {
 	return podDeletionCandidate
 }
 
-func DeletePod(p string) {
+func DeletePod(p string) string {
 
 	err := clientset.CoreV1().Pods("dev").Delete(context.TODO(), p, v1.DeleteOptions{})
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("Deleted Pod: %v ", p)
+	var result string = ("Deleted Pod: " + p)
+	return result
 }

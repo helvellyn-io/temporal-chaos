@@ -1,5 +1,0 @@
-{
-            "targetType": "pod",
-            "interval": 24,
-            "runIn": "dev"
-    }
