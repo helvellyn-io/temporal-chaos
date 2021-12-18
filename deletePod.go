@@ -1,4 +1,4 @@
-package temporalweather
+package chaos
 
 import (
 	"github.com/helvellyn-io/chaos/src/client"

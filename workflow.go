@@ -1,4 +1,4 @@
-package temporalweather
+package chaos
 
 import (
 	"time"
