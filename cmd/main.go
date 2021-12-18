@@ -2,12 +2,14 @@ package main
 
 import (
 	"github.com/helvellyn-io/chaos/src/client"
-	schedule "github.com/helvellyn-io/chaos/src/scheduler"
 )
 
 func main() {
 
-	schedule.Scheduler()
+	//schedule.Scheduler()
+	//client.IntGetPods()
+	//fmt.Println("testing stdout")
 	client.GetPods()
-
+	//client.GetSvcPods()
+	//client.DeletePod()
 }
