@@ -1,10 +1,10 @@
 # chaos
 Temporal Chaos Experiments 
  
-* Project using the Temporal framework to enable chaos experiments on a component at any level of the OSI stack. Most of whcih need to be written :) 
+* Project using the Temporal framework to enable chaos experiments on a component at any level of the OSI stack. Most of which still need to be written :) 
 
-  - Targeted/random deleteion of pods
-  - Targeting/ranom deletion of deployments
+  - Targeted/random deleteion of pods (GA) 
+  - Targeting/ranom deletion of deployments (GA) 
   - Targeted/random deletion of nodes
   - Inject latency for gRPC/HTTPS response
   - TCP/IP fault injection
