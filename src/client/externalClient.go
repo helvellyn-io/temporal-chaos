@@ -50,12 +50,12 @@ func GetPods() string {
 	return podDeletionCandidate
 }
 
-func DeletePod(p string) string {
+func DeletePod(p string) (string, error) {
 
 	err := clientset.CoreV1().Pods("dev").Delete(context.TODO(), p, v1.DeleteOptions{})
 	if err != nil {
 		log.Fatal(err)
 	}
 	var result string = ("Deleted Pod: " + p)
-	return result
+	return result, err
 }

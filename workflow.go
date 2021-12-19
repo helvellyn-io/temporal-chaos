@@ -53,11 +53,11 @@ func DelPodWorkflow(ctx workflow.Context) (*CronResult, error) {
 func DelPod(ctx context.Context, lastRunTime, thisRunTime time.Time) error {
 	activity.GetLogger(ctx).Info("Cron job running.", "lastRunTime_exclude", lastRunTime, "thisRunTime_include", thisRunTime)
 
-	r := client.DeletePod(client.GetPods())
+	r, e := client.DeletePod(client.GetPods())
 	if r == "" {
 		os.Exit(1)
 
 	}
-	fmt.Println(r)
+	fmt.Println(r, e)
 	return nil
 }
