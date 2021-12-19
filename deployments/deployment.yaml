@@ -10,6 +10,6 @@ spec:
         image: tcxcontainers.azurecr.io/tcxcontainers/chaos_app_v1:v1.0.1
         env:
           - name: DEPLOYMENT_NAME 
-            value: "tcx-adminui"
+            value: "tcx-accountservice"
       restartPolicy: Never
   backoffLimit: 4

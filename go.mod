@@ -3,6 +3,7 @@ module github.com/helvellyn-io/chaos
 go 1.17
 
 require (
+	github.com/go-redis/redis v6.15.9+incompatible
 	github.com/pborman/uuid v1.2.1
 	go.temporal.io/sdk v1.12.0
 	k8s.io/apimachinery v0.23.1
