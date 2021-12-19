@@ -21,8 +21,10 @@ go run ./worker/main.go
 go run ./start/main.go
 
 ```
+```
 TODO
 
-write tests
+write tests.
+redis integration to log chaos experiments.
 
 ```
