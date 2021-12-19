@@ -1,11 +1,18 @@
 # chaos
 Temporal Chaos Experiments 
  
-* Project using the Temporal framework to enable chaos experiments on a component at any level of the OSI stack, eg: 
-  - - as
+* Project using the Temporal framework to enable chaos experiments on a component at any level of the OSI stack. Some examples are:
 
-
-
+  - Targetted/random deleteion of pods
+  - Targetting/ranom deletion of deployments
+  - Targeted/random deletion of nodes
+  - Inject latency for gRPC/HTTPS response
+  - DNS query latency injection.
+  - Override VPA to reduce|increase replica count
+  - Region blackholing
+  - AZ blackholing
+  - Vampiric CPU
+  - more ... 
 ```
 BRANCH DETAILS: 
 
