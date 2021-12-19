@@ -21,8 +21,11 @@ jobs:
     - name: Build
       run: go build -v ./...
       
-    - name: Run
-      run: go run .
+    - name: Run Worker
+      run: go run worker/main.go
+      
+    - name: Run Starter
+      run: go run start/main.go
 
 #    - name: Test
 #      run: go test -v ./...
