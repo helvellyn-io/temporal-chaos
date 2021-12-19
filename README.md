@@ -2,7 +2,6 @@
 Temporal Chaos Experiments 
 
 
-Define and schedule chaos experients. 
 
 ```
 Branch: Master
@@ -16,6 +15,10 @@ It uses the Temporal platform to run the task.
 The schedule is determined via the CRON specifications.
 
 ```
+```
+RUN ... 
+go run ./worker/main.go
+go run ./start/main.go
 
 ```
 TODO
