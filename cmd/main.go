@@ -8,10 +8,10 @@ import (
 )
 
 func main() {
-	r := client.DeletePod(client.GetPods())
+	r, err := client.DeletePod(client.GetPods())
 	if r == "" {
 		os.Exit(1)
 
 	}
-	fmt.Println(r)
+	fmt.Println(r, err)
 }
