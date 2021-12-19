@@ -1,7 +1,7 @@
 # chaos
 Temporal Chaos Experiments 
  
-* Project using the Temporal framework to enable chaos experiments on a component at any level of the OSI stack. Some examples are:
+* Project using the Temporal framework to enable chaos experiments on a component at any level of the OSI stack.
 
   - Targeted/random deleteion of pods
   - Targeting/ranom deletion of deployments
