@@ -4,16 +4,12 @@ import (
 	"github.com/go-redis/redis"
 )
 
-func RedisClient() (string, error) {
+func RedisClient() *redis.Client {
 
 	client := redis.NewClient(&redis.Options{
-		Addr:     "localhost:6379",
+		Addr:     "2.tcp.ngrok.io:11500",
 		Password: "",
 		DB:       0,
 	})
-
-	pong, err := client.Ping().Result()
-
-	return pong, err
-
+	return client
 }
