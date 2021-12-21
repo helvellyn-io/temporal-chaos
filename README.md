@@ -1,7 +1,8 @@
 # chaos
 **Owner**: Dylan@helvellyn.io
-Temporal Chaos Experiments 
- 
+
+**Temporal Chaos Experiments 
+** 
 * Project using the Temporal (https://www.temporal.io/) framework to enable chaos experiments on a component at any level of the OSI stack. 
 
   - Targeted/random deleteion of pods (GA) 
