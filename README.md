@@ -7,13 +7,6 @@ Temporal Chaos Experiments
   - Targeting/ranom deletion of deployments (GA) 
   - Targeted/random deletion of nodes
   - Inject latency for gRPC/HTTPS response
-  - TCP/IP fault injection
-  - DNS query latency injection.
-  - Override VPA to reduce|increase replica count
-  - Region blackholing
-  - AZ blackholing
-  - Vampiric CPU
-  - more ... 
 ```
 BRANCH DETAILS: 
 
