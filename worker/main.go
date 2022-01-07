@@ -11,7 +11,7 @@ import (
 func main() {
 	// The client and worker are heavyweight objects that should be created once per process.
 	c, err := client.NewClient(client.Options{
-		HostPort: "20.122.110.191:7233", //client.DefaultHostPort,
+		//HostPort: "20.122.110.191:7233", //client.DefaultHostPort,
 	})
 	if err != nil {
 		log.Fatalln("Unable to create client", err)

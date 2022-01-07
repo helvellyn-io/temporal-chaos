@@ -23,8 +23,8 @@ type ChangeLog struct {
 
 func GetPods() string {
 	var podDeletionCandidate string
-	pods, _ := clientset.CoreV1().Pods("dev").List(context.Background(),
-		v1.ListOptions{LabelSelector: "app=tcx-accountservice"})
+	pods, _ := clientset.CoreV1().Pods("kube-system").List(context.Background(), //namespace
+		v1.ListOptions{LabelSelector: "k8s-app=kube-dns"}) //labels to filter on
 
 	for _, v := range pods.Items {
 		podDeletionCandidate = (v.Name)
@@ -34,14 +34,14 @@ func GetPods() string {
 }
 
 func DeletePod(p string) (string, error) {
-	err := clientset.CoreV1().Pods("dev").Delete(context.TODO(), p, v1.DeleteOptions{})
+	err := clientset.CoreV1().Pods("kube-system").Delete(context.TODO(), p, v1.DeleteOptions{})
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	l := ChangeLog{
-		Deployment: "tcx-accountservice",
-		Namespace:  "dev",
+		Deployment: "k8s-app=kube-dns",
+		Namespace:  "kube-system",
 		DeletedPod: p,
 	}
 
