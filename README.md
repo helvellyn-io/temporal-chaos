@@ -6,6 +6,7 @@ Temporal Chaos Experiments
 * Project using the Temporal (https://www.temporal.io/) framework to enable chaos experiments on a component at any level of the OSI stack. 
 
   - Targeted/random deleteion of pods (SAFE)
+  - Corden/Drain node(s) (SAFE)
   - Targeting/ranom deletion of deployments (UNSAFE UNLESS USING OPERATORS)
   - Targeted/random deletion of nodes (UNSAFE WITHOUT CLUSTER AUTOSCALE)
   - Inject latency for gRPC/HTTPS response (SAFE)
